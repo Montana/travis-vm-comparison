@@ -1,6 +1,6 @@
 import sys
 
-sys.setrecursionlimit(5000)
+sys.setrecursionlimit(10000)
 
 def fib_memo(n, memo={}):
     """
@@ -20,7 +20,7 @@ def heavy_calculation():
     """
     Perform heavy calculations by calculating a large Fibonacci number.
     """
-    n = 4500
+    n = 9500
     print(f"Calculating the {n}th Fibonacci number...")
     fib_number = fib_memo(n)
     print(f"The {n}th Fibonacci number is: {fib_number}")
