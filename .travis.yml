@@ -1,18 +1,18 @@
 dist: jammy
 language: python
-python: "3.8"  
+python: "3.10"  
 
 jobs:
   include:
     - stage: "Stage 1"
       name: "Heavy Calculation Part 1"
       script: python3 heavy_calculation_script.py
-      vm:
-        size: large
-
+      
     - stage: "Stage 2"
       name: "Heavy Calculation Part 3"
       script: python3 heavy_calculation_script.py
+      vm:
+        size: x-large
 
     - stage: "Stage 3"
       name: "Heavy Calculation Part 2"
