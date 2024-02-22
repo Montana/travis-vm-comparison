@@ -6,22 +6,16 @@ jobs:
   include:
     - stage: "Stage 1"
       name: "Heavy Calculation Part 1"
-      script: python heavy_calculation_script.py
+      script: python3 heavy_calculation_script.py
       vm:
         size: large
 
     - stage: "Stage 2"
-      name: "Heavy Calculation Part 2"
-      script: python heavy_calculation_script.py
-      vm:
-        size: x-large 
+      name: "Heavy Calculation Part 3"
+      script: python3 heavy_calculation_script.py
 
     - stage: "Stage 3"
-      name: "Heavy Calculation Part 3"
-      script: python heavy_calculation_script.py
-
-    - stage: "Stage 4"
       name: "Heavy Calculation Part 2"
-      script: python heavy_calculation_script.py
+      script: python3 heavy_calculation_script.py
       vm:
         size: 2x-large 
