@@ -1,29 +1,22 @@
-import sys
+def is_prime(n):
 
-sys.setrecursionlimit(10000)
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
 
-def fib_memo(n, memo={}):
-    """
-    Calculate the nth Fibonacci number using memoization to optimize.
-    :param n: The nth Fibonacci number to calculate.
-    :param memo: Dictionary to store previously calculated Fibonacci numbers.
-    :return: The nth Fibonacci number.
-    """
-    if n in memo:
-        return memo[n]
-    if n <= 2:
-        return 1
-    memo[n] = fib_memo(n-1, memo) + fib_memo(n-2, memo)
-    return memo[n]
+def calculate_primes(limit):
 
-def heavy_calculation():
-    """
-    Perform heavy calculations by calculating a large Fibonacci number.
-    """
-    n = 9500
-    print(f"Calculating the {n}th Fibonacci number...")
-    fib_number = fib_memo(n)
-    print(f"The {n}th Fibonacci number is: {fib_number}")
+    primes = []
+    for number in range(2, limit + 1):
+        if is_prime(number):
+            primes.append(number)
+    return primes
 
 if __name__ == "__main__":
-    heavy_calculation()
+    limit = 100000  
+    print(f"Calculating prime numbers up to {limit}...")
+    primes = calculate_primes(limit)
+    print(f"Found {len(primes)} prime numbers up to {limit}.")
