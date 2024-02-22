@@ -20,7 +20,7 @@ def heavy_calculation():
     """
     Perform heavy calculations by calculating a large Fibonacci number.
     """
-    n = 1000  # Change this value for larger or smaller calculations
+    n = 2500  
     print(f"Calculating the {n}th Fibonacci number...")
     fib_number = fib_memo(n)
     print(f"The {n}th Fibonacci number is: {fib_number}")
