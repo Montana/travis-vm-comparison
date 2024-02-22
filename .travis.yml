@@ -4,17 +4,17 @@ python: "3.10"
 
 jobs:
   include:
-    - stage: "Stage 1"
-      name: "Heavy Calculation Part 1 - No Premium "
+    - stage: "Stage 1 - No Premium VM"
+      name: "Heavy Calculation Part 1 - No Premium VM "
       script: python3 heavy_calculation_script.py
       
-    - stage: "Stage 2"
+    - stage: "Stage 2 - X-Large VM"
       name: "Heavy Calculation Part 2 - X-Large VM"
       script: python3 heavy_calculation_script.py
       vm:
         size: x-large
 
-    - stage: "Stage 3"
+    - stage: "Stage 3 - 2X-Large VM"
       name: "Heavy Calculation Part 3 - 2X-Large VM"
       script: python3 heavy_calculation_script.py
       vm:
